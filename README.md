@@ -5,6 +5,16 @@ MongoDb, Express, Angular, Node stack for quick project scaffolding
 
 This is skeleton for quick start with Angular and Express app.
 
+========
+After cloning repo run following commands
+
+inside /client direcotry
+
+- npm grunt install
+- npm install
+- bower install
+
+========
 For running grunt open client folder in command line and type: grunt serve, this will start grunt server on port 9000
 
 For running express server, open server folder in command line, and type: npm test (for test env) or npm start (for dist), this one will run on port 3000
