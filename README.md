@@ -5,6 +5,10 @@ MongoDb, Express, Angular, Node stack for quick project scaffolding
 
 This is skeleton for quick start with Angular and Express app.
 
+(you need to have ruby, rubygems, sass, compass, nodemon installed)
+
+(for using keysonejs you need to have mongoose and mongodb installed - not yet in repository!!!)
+
 ========
 After cloning repo run following commands
 
