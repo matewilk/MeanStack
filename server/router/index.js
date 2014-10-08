@@ -10,4 +10,5 @@
 
 module.exports = function (app) {
     app.use('/people', require('./routes/users'));
+    app.use('/keystone', require('./routes/keystone'));
 };
