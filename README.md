@@ -7,7 +7,11 @@ This is skeleton for quick start with Angular and Express app.
 
 (you need to have ruby, rubygems, sass, compass, nodemon installed)
 
-(for using keysonejs you need to have mongoose and mongodb installed - not yet in repository!!!)
+(for using keysonejs you need to have mongoose and mongodb installed)
+
+Details about how KeystoneJs is mounted into app can be found here
+
+https://github.com/keystonejs/keystone#mounting-keystone-as-a-sub-app-or-creating-a-node-module-out-of-your-keystone-project
 
 ========
 After cloning repo run following commands
