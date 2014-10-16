@@ -79,4 +79,4 @@ keystone.set('nav', {
 
 // export keystone to existing express instance (under server folder)
 
-module.export = keystone;
+module.exports = keystone;
