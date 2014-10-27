@@ -12,50 +12,54 @@ app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use(cookieParser());
+app.use(cookieParser('secretstringcookie'));
 
-/**
- * Development Settings
- */
-if (app.get('env') === 'development') {
-    // This will change in production since we'll be using the dist folder
-    app.use(express.static(path.join(__dirname, '../client')));
-    // This covers serving up the index page
-    app.use(express.static(path.join(__dirname, '../client/.tmp')));
-    app.use(express.static(path.join(__dirname, '../client/app')));
+app.keystone = require('your-app-content');
 
-    // Error Handling
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
+app.keystone.mount('/admin', app, function() {
+    /**
+     * Development Settings
+     */
+    if (app.get('env') === 'development') {
+        // This will change in production since we'll be using the dist folder
+        app.use(express.static(path.join(__dirname, '../client')));
+        // This covers serving up the index page
+        app.use(express.static(path.join(__dirname, '../client/.tmp')));
+        app.use(express.static(path.join(__dirname, '../client/app')));
+
+        // Error Handling
+        app.use(function(err, req, res, next) {
+            res.status(err.status || 500);
+            res.render('error', {
+                message: err.message,
+                error: err
+            });
         });
-    });
-}
+    }
 
-/**
- * Production Settings
- */
-if (app.get('env') === 'production') {
+    /**
+     * Production Settings
+     */
+    if (app.get('env') === 'production') {
 
-    // changes it to use the optimized version for production
-    app.use(express.static(path.join(__dirname, '/dist')));
+        // changes it to use the optimized version for production
+        app.use(express.static(path.join(__dirname, '/dist')));
 
-    // production error handler
-    // no stacktraces leaked to user
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: {}
+        // production error handler
+        // no stacktraces leaked to user
+        app.use(function(err, req, res, next) {
+            res.status(err.status || 500);
+            res.render('error', {
+                message: err.message,
+                error: {}
+            });
         });
-    });
-}
+    }
 
-/**
- * Routes
- */
-var router = require('./router')(app);
+    /**
+     * Routes
+     */
+    var router = require('./router')(app);
+});
 
 module.exports = app;
