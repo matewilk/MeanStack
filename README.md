@@ -39,7 +39,7 @@ For running express server, open server folder in command line, and type: npm te
 After this two operations you will have two servers running on different ports. Open up localhost:3000 to be able to watch all (front-end as well as back-end) changes.
 
 ========
-<--
+<!--
 NOT actuall at the moment
 run mongodb
 
