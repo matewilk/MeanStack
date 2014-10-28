@@ -7,7 +7,6 @@ This is skeleton for quick start with Angular and Express app.
 
 (you need to have ruby, rubygems, sass, compass, nodemon installed)
 
-
 ========
 for using keysonejs you need to have mongoose and mongodb installed
 
@@ -17,7 +16,11 @@ npm install mongoose --save
 npm install mongodb --save
 npm install bcrypt --save (mongo dependecy for passwords)
 
-path to keystone /admin/keystone
+path to keystone (http://localhost:3000)/admin/keystone
+
+Details about how KeystoneJs is mounted into app can be found here
+
+[This link](https://github.com/keystonejs/keystone#mounting-keystone-as-a-sub-app-or-creating-a-node-module-out-of-your-keystone-project)
 
 ========
 After cloning repo run following commands
