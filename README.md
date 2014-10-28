@@ -36,6 +36,8 @@ For running express server, open server folder in command line, and type: npm te
 After this two operations you will have two servers running on different ports. Open up localhost:3000 to be able to watch all (front-end as well as back-end) changes.
 
 ========
+<--
+NOT actuall at the moment
 run mongodb
 
 mongod --dbpath data/db/ --logpath data/logs/mongodb.log --logappend
@@ -44,3 +46,14 @@ use mongodb under data/db
 --logappend -ads to log instead of overwriting
 
 access mongo in shell : mongo
+-->
+
+inside /admin directory .env file has mongod set to (or should have it set to) :
+
+MONGO_URI=mongodb://localhost/admin
+
+it means that if you have mongo installed, it will connect to "admin" database
+if database "admin" does not exists /admin/updates/0.0.1-admin.js script will run automatically creating Admin user
+You can change Admin credentials by changing this update script.
+
+Note: You can also use this script to create any other necessary data for your app.
