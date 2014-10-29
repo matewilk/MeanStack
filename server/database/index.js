@@ -4,7 +4,7 @@
 var mongoose = require('mongoose');
 
 // Connections
-var developmentDb = 'mongodb://localhost/test';
+var developmentDb = 'mongodb://localhost/admin';
 var productionDb = 'urlToYourProductionMongoDb';
 var usedDb;
 
