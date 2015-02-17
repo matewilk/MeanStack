@@ -3,6 +3,9 @@
  */
 var mongoose = require('mongoose');
 
+//example schema require
+var UserModel = require('./schemas/users');
+
 // Connections
 var developmentDb = 'mongodb://localhost/admin';
 var productionDb = 'urlToYourProductionMongoDb';
@@ -34,4 +37,4 @@ db.once('open', function callback () {
     console.log('Databsae Connection Successfully Opened at ' + usedDb);
 });
 
-module.exports = db;
+exports.users = UserModel;
